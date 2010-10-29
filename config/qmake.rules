@@ -1,0 +1,51 @@
+## *****************************************************************************
+##
+## Copyright (c) 2010 José Manuel, Gutiérrez de la Concha. All rights reserved.
+##
+## This copy of PhpRunner is licensed to you under the terms described
+## in the LICENSE file included in this distribution.
+##
+## email: pepone.onrez@gmail.com
+##
+## *****************************************************************************
+
+#
+# MODE is DEBUG for debug builds and RELEASE for optimized builds
+#
+MODE = DEBUG
+
+#
+# ZeroC - Ice
+#
+ICE_HOME = /opt/Ice-3.4.1
+
+#
+# slice2cpp command
+#
+QMAKE_SLICE2CPP = $$ICE_HOME/bin/slice2cpp
+
+#
+# slice2php command
+#
+QMAKE_SLICE2PHP = $$ICE_HOME/bin/slice2php
+
+#
+# Slice compilers flags
+#
+SLICE_FLAGS = -I$$ICE_HOME/slice
+
+#
+# slice2cpp compiler flags.
+#
+SLICE2CPP_FLAGS = $$SLICE_FLAGS
+
+#
+# slice2php compiler flags.
+#
+SLICE2PHP_FLAGS = $$SLICE_FLAGS
+
+#
+# General output directories.
+#
+OBJECTS_DIR = .obj
+

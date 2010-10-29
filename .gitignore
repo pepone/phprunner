@@ -1,0 +1,11 @@
+*~
+*.moc
+*.obj
+*.ui
+bin/*
+lib/*
+Makefile
+qrc_*
+src/slice/*.h
+src/slice/*.cpp
+src/slice/*.php

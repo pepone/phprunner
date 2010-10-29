@@ -1,0 +1,176 @@
+This archive contains the source code for PhpRunner.
+
+Description
+-----------
+
+  PhpRunner is a C++ service that facilitate the task of run PHP
+scripts that run for long period of time.
+
+ Usually is not possible to run long time PHP process inside a web server
+because the connection timeouts on the web server will prevent the process
+to run successfully, and will end forcefully.
+
+  With PhpRunner you can launch your scripts from any PHP page and then
+pool the server to know the status of the scripts, if you want to terminate
+and script it is also possible to kill the process remotely.
+
+
+The Server
+----------
+
+  The server is written C++:
+
+  Ice (Internet Communication Engine | http://www.zeroc.com) is used for
+the communications between the C++ Server and the PHP web pages.
+
+  Nokia Qt toolkit (http://qt.nokia.com/products/) is used to manage
+system processes using QProcess class (http://doc.trolltech.com/qprocess.html)
+
+  Source code for the server is provided in src/server folder subdirectory of this
+distribution.
+
+Simple PHP demo
+---------------
+
+  There is a simple PHP demo under demo subdirectory, the demo is a simple PHP
+Web Application that list the task running in PhpRunner service, allow to add
+new taks, and kill the already running tasks.
+
+
+  To create the PHP demo i have used my own simple PHP framework oz-web, that is
+a small set of classes that helps to create PHP Web applications.
+
+The PHP demo source code is under demo subdirectory of this distribution,
+
+  * demo/scripts:
+
+  In this directory we place the PHP scripts that can be run inside PhpRunner,
+the demo use a single script "DemoScript.php" demo/oz-web subdirectory contains
+the demo application, let see some more details of the demo application.
+
+  * demo/oz-web/Init.php:
+  -----------------------
+  This file contains the application configuration, see comments
+in the file for details, in particular you should update ICE_PATH to set the path to Ice
+php include that match your Ice setup.
+
+  * demo/oz-web/src/controller/public/DefaultPageController.php
+  -------------------------------------------------------------
+  This file define the web pages of our demo application.
+
+  * demo/oz-web/src/controller/public/PhpRunnerPageController.php
+  ---------------------------------------------------------------
+  This file manage communications between PhpRunner service and the web browser, the
+communications are done using AJAX and JSON.
+
+Building the Server
+-------------------
+
+Extract the PhpRunner archive in any directory you like (for example,
+in your home directory):
+
+  $ tar xvfz PhpRunner-1.0.0.tar.gz
+
+Change the working directory to PhpRunner-1.0.0:
+
+  $ cd PhpRunner-1.0.0
+
+Edit config/qmake.rules to establish your C++ build configuration. 
+The comments in the file provide more information.
+
+To build the server execute the following commands:
+
+ $ qmake -recursive
+ $ make
+
+To install the server execute the following commands:
+
+ $ make install.
+
+
+Running the Server.
+-------------------
+
+Review configuration file "/opt/phprunner/config/config.phprunner".
+
+To run the server first ensure that lib subdirectory is in your LD_LIBRARY_PATH, that
+can be done with the following command:
+
+  $ export LD_LIBRARY_PATH=/opt/phprunner/lib
+
+Then you can run the server with the following command:
+
+  $ /opt/bin/oz-phprunner --Ice.Config=/opt/phprunner/config/config.phprunner
+
+Setup PHP demo.
+---------------
+
+  The easy way to setup the PHP demo is to create a new apache virtual host
+
+  Here is a sample virtual host configuration file you can use, where to place
+the Virtual Host configuration depends of your apache setup so you should consult
+your system documentation, in linux distros this is usually under /etc/apache/...
+
+<VirtualHost *:80>
+    ServerName  phprunner.loc
+
+    DocumentRoot /var/www/phprunner/demo/oz-web/online/
+   <Directory "/var/www/phprunner/demo/oz-web/online/">
+
+        Options +FollowSymLinks -Indexes
+        RewriteEngine On
+
+
+        AllowOverride All
+        Options Indexes FollowSymLinks
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+
+  Add "phprunner.loc" to your "/etc/hosts"
+
+    $ nano /etc/hosts
+
+  and add the following line
+
+    127.0.14.1      phprunner.loc
+
+  Create a symbolic link to the sources under you apache directory
+for example in Ubuntu i do.
+
+    $ cd /var/wwww
+    $ sudo ln -s /home/pepone/phprunner .
+
+  Restart apache a point your web browser to "http://phprunner.loc" if all goes great you
+will see a web page similar to our online demo at "http://phprunner.ydra.org".
+
+ThirdParty & Acknowledgments
+----------------------------
+
+- Ice is used to manage communication between C++ and PHP, it is also
+used for C++ threading and services, To know more about Ice see:
+
+    http://www.zeroc.com
+
+- Qt is used to manage system processes, and also for qmake
+build system. To know more about Qt see:
+    
+    http://qt.nokia.com/products/
+
+- Jquery JavaScript library is used in the PHP demo, to know more
+about Jquery see:
+
+    http://jquery.com/
+
+- Jquery UI JavaScript library is used in the PHP demo, to know more
+about Jquery UI see:
+
+    http://jqueryui.com/
+
+- JsClass JavaScript library is used in the PHP demo, to know more 
+about JsClass see:
+
+    http://jsclass.jcoglan.com/
+    

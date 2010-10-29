@@ -1,0 +1,63 @@
+#
+# The endpoint of the PhpRunner server's object adapter. This should be
+# an endpoint on an internal network (like 192.168.x.x), or on the
+# loopback, so that the server is not directly accessible from
+# the Internet.
+#
+PhpRunner.Endpoints=tcp -h 127.0.0.1 -p 10001
+
+#
+# Warn about connection exceptions
+#
+#Ice.Warn.Connections=1
+
+#
+# Network Tracing
+#
+# 0 = no network tracing
+# 1 = trace connection establishment and closure
+# 2 = like 1, but more detailed
+# 3 = like 2, but also trace data transfer
+#
+#Ice.Trace.Network=3
+
+#
+# Protocol Tracing
+#
+# 0 = no protocol tracing
+# 1 = trace protocol messages
+#
+#Ice.Trace.Protocol=1
+
+
+#
+# Server Tracing
+#
+# 0 = disable server tracing
+# 1 = enable server tracing
+log.level=1
+
+
+#
+# We configure the server thread pool as we want the chatserver
+# to be multi threaded.
+#
+
+Ice.ThreadPool.Server.Size=4
+Ice.ThreadPool.Server.SizeMax=10
+
+#
+# php executable path
+#
+
+php.executable=/usr/bin/php
+
+#
+# Base directory to store PHP scripts
+#
+script.path=/opt/phprunner/demo/scripts
+
+#
+# Configure Ice Logger to send log messages to syslog
+#
+#Ice.UseSyslog = 1

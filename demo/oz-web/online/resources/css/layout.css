@@ -1,0 +1,67 @@
+/********************************************************************************
+//
+// Copyright (c) 2010 José Manuel, Gutiérrez de la Concha. All rights reserved.
+//
+// This copy of oz-web is licensed to you under the terms described
+// in the LICENSE file included in this distribution.
+//
+// email: pepone.onrez@gmail.com
+//
+// ******************************************************************************/
+
+.hidden{ display: none; }
+.clear{ clear:both; }
+h1{ font-weight:bold; }
+.small{ font-weight:normal; }
+.frametop a{ text-decoration:none; font-weight:bold;}
+.frametop a,
+.frametop a:visited,
+.frametop a:hover,
+.framebottom a,
+.framebottom a:visited,
+.framebottom a:hover,
+.framebottom p{ color:white; text-decoration: none; }
+.framebottom .footer p.message{ float: left; margin-top: 20px; margin-left: 20px;}
+.framebottom .footer p.developed{ float: right; margin-top: 20px; margin-right: 20px;}
+.frametop a,
+.frametop a:visited,
+.frametop a:hover,
+.framebottom a,
+.framebottom a:visited,
+.framebottom a:hover{ font-style: italic; font-weight: bold;}
+select{ background-color:white; }
+select,
+textarea,
+input{ -moz-border-radius:5px; border: 1px solid #8dbdf7; color:#5471af;}
+
+.admindialog  p{ margin-top: 5px; }
+select,
+input{ width:260px; }
+input:focus{ border: 1px solid #5471af;}
+.dialog .actions{ float:left; width:100%;}
+    .dialog .actions > a{ float:right;}
+    .dialog > form{ float:left;}
+    .dialog .actions,
+    .dialog form > p{ margin-top:10px;}
+
+body{ width:100%; color:#A6C9E2; font-family: 'Josefin Sans Std Light', arial, serif;}
+/*Layout */
+.container{ width:960px; line-height:28px; margin-left:auto; margin-right:auto;}
+    .main{float:left; width:960px;}
+        .frametop{float:left; width:100%; margin-top: 10px; color:white;}
+            .frametop a{color:white;}
+            .frametop .title{float:left; width:250px; height:96px;}
+                .frametop .title > h1{position:relative; width:400px; top:30px;
+                    left:20px; font-family: 'Josefin Sans Std Light', arial, serif;}
+        .framemid{float:left; width:960px; margin-top:10px;}
+
+.framebottom{float:left; width:100%; margin-top: 10px; color:white;}
+    .framebottom > .footer{ margin-top:20px; margin-left:auto; margin-right:auto;}
+    .framebottom > .footer > a{ float: left; color:white; font-weight: bold; margin-left: 0.4em;
+        margin-top: 3.6em; font-style: italic;}
+.admindialog label{ float: left; width: 140px; }
+.admindialog .actions{ width: 100%; float: left; padding: 0.4em; }
+.admindialog .actions a{float:right; margin-left: 0.4em; }
+.admindialog .message{ width: 100%; float: left;}
+
+
