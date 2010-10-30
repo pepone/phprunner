@@ -13,7 +13,7 @@
         <div class="framebottom toolbar ui-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix">
             <div class="footer">
                 <p class="message small">
-                    <a href="http://jose.ydra.org/projects/phprunner">PhpRunner</a> is Open Source.<br/>
+                    <a href="http://jose.ydra.org/projects/PhpRunner">PhpRunner</a> is Open Source.<br/>
                     
                 </p>
                 <p class="developed small">Developed By:
