@@ -23,8 +23,6 @@ class CoreApplication
 {
     private static $_app;
 
-    protected $_ice;
-    protected $_runner;
     protected $_lastException;
     protected $_route;
     protected $_contentType;
