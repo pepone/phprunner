@@ -16,8 +16,6 @@
 module oz
 {
 
-dictionary <string, string> StringMap;
-
 module php
 {
 
