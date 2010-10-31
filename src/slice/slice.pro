@@ -13,8 +13,6 @@
 TOPDIR = ../..
 include($$TOPDIR/config/qmake.rules)
 SLICES = $$TOPDIR/src/slice/PhpRunner.ice
-PHP_OUTPUT_DIR = $$TOPDIR/src/slice
-SLICE2PHP_FLAGS += --output-dir $$PHP_OUTPUT_DIR
 
 include($$TOPDIR/config/slice2cpp.pri)
 include($$TOPDIR/config/slice2php.pri)
