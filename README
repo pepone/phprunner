@@ -11,9 +11,8 @@ because the connection timeouts on the web server will prevent the process
 to run successfully, and will end forcefully.
 
   With PhpRunner you can launch your scripts from any PHP page and then
-pool the server to know the status of the scripts, if you want to terminate
+poll the server to know the status of the scripts, if you want to terminate
 and script it is also possible to kill the process remotely.
-
 
 The Server
 ----------
@@ -36,7 +35,6 @@ Simple PHP demo
 Web Application that list the task running in PhpRunner service, allow to add
 new taks, and kill the already running tasks.
 
-
   To create the PHP demo i have used my own simple PHP framework oz-web, that is
 a small set of classes that helps to create PHP Web applications.
 
@@ -50,9 +48,9 @@ the demo application, let see some more details of the demo application.
 
   * demo/oz-web/Init.php:
   -----------------------
-  This file contains the application configuration, see comments
-in the file for details, in particular you should update ICE_PATH to set the path to Ice
-php include that match your Ice setup.
+  This file contains the application configuration, see comments in the file for 
+details, in particular you should update ICE_PATH to set the path to Ice php 
+include that match your Ice setup.
 
   * demo/oz-web/src/controller/public/DefaultPageController.php
   -------------------------------------------------------------
@@ -143,8 +141,9 @@ for example in Ubuntu i do.
     $ cd /var/wwww
     $ sudo ln -s /home/pepone/phprunner .
 
-  Restart apache a point your web browser to "http://phprunner.loc" if all goes great you
-will see a web page similar to our online demo at "http://phprunner.ydra.org".
+  Restart apache and point your web browser to "http://phprunner.loc" if all 
+goes great you will see a web page similar to our online demo at 
+"http://phprunner.ydra.org".
 
 ThirdParty & Acknowledgments
 ----------------------------
